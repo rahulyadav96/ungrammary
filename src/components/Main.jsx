@@ -11,13 +11,13 @@ export const Main = () => {
                 <Typography variant='h4' style={{marginBottom:"20px"}}>Hi, let's get in touch.</Typography>
                 <form>
                     <TextField fullWidth label='Phone no' variant="outlined">
-                        <span>India</span>
+                     
                     </TextField>
                     <Select fullWidth label='Select Country' placeholder="Country"></Select>
                     <TextField fullWidth label='Enter Name' variant="outlined" />
                     <TextField fullWidth label='Email Address' variant="outlined" />
                     <TextareaAutosize
-                        style={{width:"94%", padding:"15px", resize:"none"}}
+                        style={{width:"inherit", padding:"15px", resize:"none"}}
                         minRows={7}
                         aria-label="maximum height"
                         placeholder="Message"
