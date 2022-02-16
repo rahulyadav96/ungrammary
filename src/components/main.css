@@ -1,0 +1,12 @@
+.main-container{
+    display: flex;
+    width: 85%;
+    margin: auto;
+    justify-content: space-between;
+}
+.banner-container,.form-container{
+    flex: 0.45;
+}
+.banner-container>img{
+    width: 100%;
+}

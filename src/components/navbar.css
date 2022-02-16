@@ -1,0 +1,15 @@
+.nav-container{
+    display: flex;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+}
+.nav-middle{
+    flex: 1;
+    margin-left: 111px;
+}
+.nav-right{
+  display: flex;
+  gap: 10px;
+}
