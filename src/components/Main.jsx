@@ -28,7 +28,7 @@ export const Main = () => {
             <div className="form-container">
                 <Typography variant='p' className='connectText'>Hi, let's get in touch.</Typography>
                 <form>
-                    <TextField fullWidth label='Phone no' variant="outlined" name='phone' onChange={handleChange} value={userData.phone}>
+                    <TextField fullWidth label='Phone no' type="number" variant="outlined" name='phone' onChange={handleChange} value={userData.phone}>
                      
                     </TextField>
                     <FormControl>
@@ -43,8 +43,8 @@ export const Main = () => {
                             <MenuItem value="USA">USA</MenuItem>
                     </Select>
                     </FormControl>
-                    <TextField fullWidth label='Enter Name' variant="outlined" name='fullName' onChange={handleChange} value={userData.fullName}/>
-                    <TextField fullWidth label='Email Address' variant="outlined" name='email' onChange={handleChange} />
+                    <TextField fullWidth label='Enter Name' type="text" variant="outlined" name='fullName' onChange={handleChange} value={userData.fullName}/>
+                    <TextField fullWidth label='Email Address' type="email" variant="outlined" name='email' onChange={handleChange} />
                     <TextareaAutosize
                         style={{width:"inherit", padding:"15px", resize:"none"}}
                         minRows={7}
