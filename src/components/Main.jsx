@@ -26,7 +26,7 @@ export const Main = () => {
                 <img src='./img/banner.png' alt='banner' />
             </div>
             <div className="form-container">
-                <Typography variant='h4' style={{marginBottom:"20px"}}>Hi, let's get in touch.</Typography>
+                <Typography variant='p' className='connectText'>Hi, let's get in touch.</Typography>
                 <form>
                     <TextField fullWidth label='Phone no' variant="outlined" name='phone' onChange={handleChange} value={userData.phone}>
                      

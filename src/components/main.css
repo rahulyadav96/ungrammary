@@ -22,7 +22,17 @@
     display: flex;
     flex-direction: column;
     gap: 35px;
+   
 }
+.connectText{
+    display: block;
+    font-size: 2.2rem;
+    font-weight: bold;
+    padding-bottom: 20px;
+    
+}
+
+
 @media only screen and (max-width: 900px) {
     .main-container {
      flex-direction: column;
@@ -30,5 +40,9 @@
     }
     .banner-container,.form-container{
         flex: 1;
+    }
+    .connectText{
+        text-align: center;
+        font-size: 1.5rem;
     }
   }
