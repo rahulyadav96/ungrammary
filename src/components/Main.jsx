@@ -1,8 +1,21 @@
 import { TextField, TextareaAutosize, Typography, Button, Select,MenuItem, FormControl, InputLabel } from '@mui/material';
 import { useState } from 'react';
-import './main.css';
 
+import './main.css';
+import {makeStyles} from '@mui/styles';
+
+const useStyle = makeStyles({
+    submitButton:{
+        backgroundColor:"navy",
+        color:"#ffffff"
+      
+    },
+    
+})
 export const Main = () => {
+
+    const classes = useStyle();
+
     const [userData, setUserData] = useState({
         phone:"",
         country:"",
@@ -16,10 +29,12 @@ export const Main = () => {
 
         setUserData({...userData,[name]:value})
     }
+
     const handleSubmit = (e)=>{
         e.preventDefault();
         console.log(userData)
     }
+    
     return <>
         <div className="main-container">
             <div className="banner-container">
@@ -28,9 +43,9 @@ export const Main = () => {
             <div className="form-container">
                 <Typography variant='p' className='connectText'>Hi, let's get in touch.</Typography>
                 <form>
-                    <TextField fullWidth label='Phone no' type="number" variant="outlined" name='phone' onChange={handleChange} value={userData.phone}>
-                     
-                    </TextField>
+                    <FormControl>
+                        <TextField fullWidth label='Phone no' id="phone" type="number" variant="outlined" name='phone' onChange={handleChange} value={userData.phone} />
+                    </FormControl>
                     <FormControl>
                     <InputLabel id="demo-simple-select-autowidth-label">Select Country</InputLabel>
                     <Select 
@@ -56,6 +71,7 @@ export const Main = () => {
                     />
                 </form>
                 <Button variant='contained'
+                className={classes.submitButton}
                 style={{marginTop:"20px"}}
                 onClick={handleSubmit}
                 >Submit</Button>
