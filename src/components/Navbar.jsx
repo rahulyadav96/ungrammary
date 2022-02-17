@@ -1,7 +1,10 @@
 import './navbar.css';
-import {Button, Typography,Select} from "@mui/material"
+import {Button, MenuItem,Select, IconButton } from "@mui/material";
+import MenuIcon from '@mui/icons-material/Menu';
+import { useState } from 'react';
 
 export const Navbar = ()=>{
+    const [lang,setLang] = useState("")
     return <>
          <div className="nav-container">
              <div className="logo-container nav-left">
@@ -15,12 +18,18 @@ export const Navbar = ()=>{
              </div>
              <div className="nav-right">
                  <Button variant='outlined'>Contact us</Button>
-                 <Select defaultValue="any">
-                     <option value="India" selected>India</option>
-                     <option value="India" selected>India</option>
-                     <option value="India" selected>India</option>
-                     <option value="India" selected>India</option>
+                 <Select defaultValue="UK" onChange={(e)=>setLang(e.target.value)}>
+                     <MenuItem value="India">India</MenuItem>
+                     <MenuItem value="UK">UK</MenuItem>
+                     <MenuItem value="China">China</MenuItem>
                  </Select>
+             </div>
+             <div className='menu'>
+             <IconButton  >
+
+                <MenuIcon/>
+             </IconButton>
+
              </div>
          </div>
     </>

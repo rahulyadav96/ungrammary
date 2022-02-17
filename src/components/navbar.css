@@ -13,3 +13,15 @@
   display: flex;
   gap: 10px;
 }
+.menu{
+  display: none;
+}
+@media only screen and (max-width: 1131px) {
+  
+  .nav-middle,.nav-right{
+     display: none;
+  }
+  .menu{
+    display: block;
+  }
+}
