@@ -2,7 +2,9 @@ import { TextField, TextareaAutosize, Typography, Button, Select,MenuItem, FormC
 import { useState } from 'react';
 import './main.css';
 import {makeStyles} from '@mui/styles';
+import { padding } from '@mui/system';
 
+// for custom styling on mui components
 const useStyle = makeStyles({
     submitButton:{
         backgroundColor:"navy !important",
@@ -10,14 +12,19 @@ const useStyle = makeStyles({
         marginTop:"20px !important",
         borderRadius:"none !important"
     },
-  
+    span:{
+        float:"right",
+        textAlign:'right !important',
+    }
     
 })
+
+
 export const Main = () => {
     
-    const classes = useStyle();
+    const classes = useStyle(); 
     
-    
+    //for stroing form inputs
     const [userData, setUserData] = useState({
         phone:"",
         country:"",
@@ -25,12 +32,14 @@ export const Main = () => {
         email:"",
         msg:""
     });
+
+    //for validation
     const [valid,setValid] = useState({
         phone:false,
         fullName:false,
-        country:false,
-        email:false
     })
+
+    //function for validation
     const validation = (user)=>{
         let isvalidname = true;
         let isPhone = true;
@@ -54,6 +63,7 @@ export const Main = () => {
        
     }
     
+    //to handle userInput
     const handleChange=(e)=>{
         const {name,value}  = e.target;
 
@@ -61,6 +71,7 @@ export const Main = () => {
 
     }
 
+    //submit button handler
     const handleSubmit = (e)=>{
         e.preventDefault();
         if(validation(userData)) {
@@ -87,7 +98,7 @@ export const Main = () => {
                     onChange={handleChange} 
                     value={userData.phone}
                     error={valid.phone}
-                    helperText={valid.phone?"Alphabets not allowed":""}
+                    helperText={valid.phone?<span className={classes.span}>Alphabets not allowed</span>:""}
                     
                     />
                    
@@ -107,8 +118,9 @@ export const Main = () => {
 
                     <TextField fullWidth label='Enter Name' type="text" variant="outlined" name='fullName' onChange={handleChange} value={userData.fullName}
                         error={valid.fullName}
-                        helperText={valid.fullName?"Special characters not allowed":""}
+                        helperText={valid.fullName?<span className={classes.span}>Special characters not allowed</span>:""}
                     />
+                   
                     <TextField fullWidth label='Email Address' type="email" variant="outlined" name='email' onChange={handleChange} />
                     
                     <TextareaAutosize
