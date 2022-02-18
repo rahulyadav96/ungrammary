@@ -16,7 +16,11 @@ const useStyle = makeStyles({
         border:"none !important",
         borderRadius:"0"
 
+   },
+   menuIcon:{
+       minHeight:"40px"
    }
+   
     
 })
 export const Navbar = ()=>{
@@ -46,9 +50,9 @@ export const Navbar = ()=>{
                  </Select>
              </div>
              <div className='menu'>
-             <IconButton  >
+             <IconButton className={classes.menuIcon}  >
 
-                <MenuIcon/>
+                <MenuIcon />
              </IconButton>
 
              </div>

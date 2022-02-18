@@ -48,18 +48,26 @@ export const Main = () => {
                 break;
             }
         }
-        setValid({...valid,fullName:!isvalidname,phone:!isPhone})
+        setValid({...valid,fullName:!isvalidname,phone:!isPhone});
+
+        if(isvalidname&& isPhone) return true;
+       
     }
     
     const handleChange=(e)=>{
         const {name,value}  = e.target;
 
         setUserData({...userData,[name]:value})
+
     }
 
     const handleSubmit = (e)=>{
         e.preventDefault();
-        if(validation(userData)) console.log(userData)
+        if(validation(userData)) {
+            console.log(userData)
+            alert("submited")
+        }
+
     }
     
     return <>
@@ -80,7 +88,7 @@ export const Main = () => {
                     value={userData.phone}
                     error={valid.phone}
                     helperText={valid.phone?"Alphabets not allowed":""}
-                  
+                    
                     />
                    
                     <FormControl>
