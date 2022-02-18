@@ -5,14 +5,17 @@ import { useState } from 'react';
 import {makeStyles} from '@mui/styles';
 const useStyle = makeStyles({
    contactButton:{
-      color:"navy",
-    borderColor:"navy"
+        color:"navy !important",
+        borderColor:"navy !important",
+        padding:"5px 8px !important"
    },
 
    langSelection:{
-   maxHeight:"53px",
-   outline:"none",
-   border:"none"
+        maxHeight:"53px",
+        outline:"none",
+        border:"none !important",
+        borderRadius:"0"
+
    }
     
 })
@@ -38,7 +41,7 @@ export const Navbar = ()=>{
                          <img src='./img/indian_flag.png' alt='india' className='flag'/>
                      </MenuItem>
                      <MenuItem value="UK">
-                     <img src='./img/eng.png'alt='Englend'className='flag'/>
+                     <img src='./img/eng.png'alt='UK'className='flag'/>
                      </MenuItem>
                  </Select>
              </div>
