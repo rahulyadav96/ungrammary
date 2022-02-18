@@ -9,7 +9,11 @@ const useStyle = makeStyles({
    contactButton:{
         color:"navy !important",
         borderColor:"navy !important",
-        padding:"5px 8px !important"
+        padding:"5px 8px !important",
+       textTransform:"capitalize !important"
+   },
+   navBtn:{
+    textTransform:"capitalize !important"
    },
 
    langSelection:{
@@ -36,9 +40,9 @@ export const Navbar = ()=>{
              </div>
              <div className="nav-middle">
              
-                 <Button variant='string'>Abount Us</Button>
-                 <Button variant='string'>Solution</Button>
-                 <Button variant='string'>Global Network</Button>
+                 <Button variant='string' className={classes.navBtn}>Abount Us</Button>
+                 <Button variant='string' className={classes.navBtn}>Solution</Button>
+                 <Button variant='string' className={classes.navBtn}>Global Network</Button>
              </div>
              <div className="nav-right">
                  <Button variant='outlined' className={classes.contactButton}>Contact us</Button>

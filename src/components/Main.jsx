@@ -10,7 +10,8 @@ const useStyle = makeStyles({
         backgroundColor:"navy !important",
         color:"#ffffff",
         marginTop:"20px !important",
-        borderRadius:"none !important"
+        borderRadius:"none !important",
+        textTransform:"capitalize !important"
     },
     span:{
         float:"right",
